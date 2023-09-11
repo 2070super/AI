@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from tensorflow import keras
 class mycallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self,epoch,logs={}):
-        if(logs.get('loss')<0.4):
+        if(logs.get('loss')<0.001):
             print("\n loss is low,so cancelling training")
             self.model.stop_training=True
 clouth=keras.datasets.fashion_mnist
